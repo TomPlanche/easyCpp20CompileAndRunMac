@@ -12,23 +12,31 @@
 ​	In order to use this command, you'll need at least one argument, the path of your
 current directory
 
-## Compilation
+## Compile and run
 
-#### - You want to compile all of the .cpp files in your directory.
+### - Compile all files and run
 
 ```shell
 yourAliasName $PWD
 ```
 
-```shell
-yourAliasName $PWD -c
-```
-
-#### - You want to ignore files.
+### - Compile, ignore file(s) and run
 
 ```shell
 yourAliasName $PWD ignoredFile1.cpp ... ignoredFilesN.cpp
 ```
+
+
+
+## Compile
+
+### - You want to compile all of the .cpp files in your directory.
+
+```shell
+yourAliasName $PWD -c
+```
+
+### - You want to ignore files.
 
 ```shell
 yourAliasName $PWD -c ignoredFile1.cpp ... ignoredFilesN.cpp
@@ -40,13 +48,13 @@ This senario is the complex one.
 
 There’s a lot of different cases.
 
-### - The compiled file 'mainTqt' already exists.
+## - The compiled file 'mainTqt' already exists.
 
 ```shell
 yourAliasName $PWD -r
 ```
 
-### - The compiled file 'mainTqt' does not exist.
+## - The compiled file 'mainTqt' does not exist.
 
 ```shell
 yourAliasName $PWD -r
@@ -57,14 +65,14 @@ yourPath/mainTqt does not exist.
 Do you want to compile and run ? (y/n) : 
 ```
 
-#### - If you want to compile then run
+### - If you want to compile then run
 
 ```shell
 Do you want to compile and run ? (y/n) : y
 Do you not want to compile certain files ? (y/n) : 
 ```
 
-##### - If you want to ignore files:
+#### - If you want to ignore files:
 
 ```shell
 Do you not want to compile certain files ? (y/n) : y
@@ -77,7 +85,7 @@ Compilation of othersFilesNames into mainTqt.
 ----- Compiling complete.
 ```
 
-##### - If you don't  want to ignore files:
+#### - If you don't  want to ignore files:
 
 ```shell
 Do you not want to compile certain files ? (y/n) : n
