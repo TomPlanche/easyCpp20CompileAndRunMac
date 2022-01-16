@@ -4,7 +4,7 @@
     </h1>
 </div>
 
-> Allows you to compile and/or run c++ code on the terminal.
+> Allows you to **easily** compile and/or run c++ code on the terminal.
 >
 >  Simply adds `alias youAliasName="sh yourFilePath/runCpp20.sh $1"` to your shell
 > configuration file.
