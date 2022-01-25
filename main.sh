@@ -41,6 +41,27 @@ function compile() {
         fi
       fi
     done
+
+    if [ -d "assets" ]
+    then
+      cd assets/
+      for file in *
+      do
+        if testFilePath $file
+        then
+          if [ ".${file##*.}" == ".cpp" ]
+          then
+            if echo ${toIgnore[@]} | grep -q -w $file
+            then
+                echo "assets/$file ignored."
+            else
+                toCompile+=("assets/$file")
+            fi
+          fi
+        fi
+      done
+      cd $1
+    fi
   fi
 
   echo "Compiling of ${toCompile[*]} into mainTqt."
