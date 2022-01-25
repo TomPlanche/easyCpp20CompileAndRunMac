@@ -12,6 +12,8 @@
 ​	In order to use this command, you'll need at least one argument, the path of your
 current directory
 
+if you have an 'assets' folder, it will also compile the files in that folder.
+
 ## Compile and run
 
 ### - Compile all files and run
@@ -62,14 +64,14 @@ yourAliasName $PWD -r
 
 ```shell
 yourPath/mainTqt does not exist.
-Do you want to compile and run ? (y/n) : 
+Do you want to compile and run ? (y/n) :
 ```
 
 ### - If you want to compile then run
 
 ```shell
 Do you want to compile and run ? (y/n) : y
-Do you not want to compile certain files ? (y/n) : 
+Do you not want to compile certain files ? (y/n) :
 ```
 
 #### - If you want to ignore files:
@@ -94,4 +96,3 @@ Do you not want to compile certain files ? (y/n) : n
 Compilation of allCppFilesNames into mainTqt.
 ----- Compiling complete.
 ```
-
