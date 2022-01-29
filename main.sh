@@ -18,6 +18,28 @@ function compile() {
         fi
       fi
     done
+
+    if [ -d "assets" ]
+    then
+      echo "--- assets find !"
+      cd assets/
+      for file in *
+      do
+        if testFilePath $file
+        then
+          if [ ".${file##*.}" == ".cpp" ]
+          then
+            if echo ${toIgnore[@]} | grep -q -w $file
+            then
+                echo "assets/$file ignored."
+            else
+                toCompile+=("assets/$file")
+            fi
+          fi
+        fi
+      done
+      cd $1
+    fi
   else
     unset toIgnore
 
@@ -44,6 +66,7 @@ function compile() {
 
     if [ -d "assets" ]
     then
+      echo "--- assets find !"
       cd assets/
       for file in *
       do
@@ -141,28 +164,26 @@ function testFolderPath() {
 }
 
 
-if [ $# -lt 1 ]
+
+calledFrom=`pwd`
+
+if [ $# -eq 0 ]
 then
-  echo "Not enough arguments."
-else
-  if [ $# == 2 ]
+  compile $calledFrom
+  run $calledFrom
+elif [ $# -eq 1 ]
+then
+  if [ $1 = '-c' ]
   then
-    if testFolderPath $2
-    then
-      compile $2
-      run $2
-    fi
+    compile $calledFrom
+  elif [ $1 = '-r' ]
+  then
+    run $calledFrom
+  else
+    compile $calledFrom $1
+    run $calledFrom
   fi
-  case $2 in
-    "-c")
-      compile $@
-      ;;
-    "-r")
-      run $1
-      ;;
-      *)
-      compile $@
-      run $1
-      ;;
-  esac
+else
+  compile $calledFrom $@
+  run $calledFrom
 fi
