@@ -6,7 +6,7 @@
 
 > Allows you to **easily** compile and/or run c++ code on the terminal.
 >
->  Simply adds `alias youAliasName="sh yourFilePath/runCpp20.sh $1"` to your shell
+>  Simply adds `alias youAliasName="sh yourFilePath/runCpp20.sh"` to your shell
 > configuration file.
 
 ​	In order to use this command, you'll need at least one argument, the path of your
@@ -19,13 +19,13 @@ if you have an 'assets' folder, it will also compile the files in that folder.
 ### - Compile all files and run
 
 ```shell
-yourAliasName $PWD
+yourAliasName
 ```
 
 ### - Compile, ignore file(s) and run
 
 ```shell
-yourAliasName $PWD ignoredFile1.cpp ... ignoredFilesN.cpp
+yourAliasName ignoredFile1.cpp ... ignoredFilesN.cpp
 ```
 
 
@@ -35,13 +35,13 @@ yourAliasName $PWD ignoredFile1.cpp ... ignoredFilesN.cpp
 ### - You want to compile all of the .cpp files in your directory.
 
 ```shell
-yourAliasName $PWD -c
+yourAliasName -c
 ```
 
 ### - You want to ignore files.
 
 ```shell
-yourAliasName $PWD -c ignoredFile1.cpp ... ignoredFilesN.cpp
+yourAliasName -c ignoredFile1.cpp ... ignoredFilesN.cpp
 ```
 
 ## Run
@@ -53,13 +53,13 @@ There’s a lot of different cases.
 ## - The compiled file 'mainTqt' already exists.
 
 ```shell
-yourAliasName $PWD -r
+yourAliasName -r
 ```
 
 ## - The compiled file 'mainTqt' does not exist.
 
 ```shell
-yourAliasName $PWD -r
+yourAliasName -r
 ```
 
 ```shell
