@@ -6,13 +6,12 @@
 
 > Allows you to **easily** compile and/or run c++ code on the terminal.
 >
->  Simply adds `alias youAliasName="sh yourFilePath/runCpp20.sh"` to your shell
+> Simply adds `alias youAliasName="sh yourFilePath/runCpp20.sh"` to your shell
 > configuration file.
-
-​	In order to use this command, you'll need at least one argument, the path of your
-current directory
-
-if you have an 'assets' folder, it will also compile the files in that folder.
+>
+> 
+>
+> If you have an 'assets' folder, it will also compile the files in that folder.
 
 ## Compile and run
 
